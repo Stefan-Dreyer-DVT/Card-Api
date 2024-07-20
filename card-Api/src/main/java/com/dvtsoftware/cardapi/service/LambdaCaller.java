@@ -12,10 +12,8 @@ public class LambdaCaller {
     private RestTemplate restTemplate;
 
     public boolean sendRequest(CardTransaction cardTransaction){
-
-        String string = restTemplate.postForObject("https://qcs7khyahouzpbpgf4fvqyl2cq0wlejz.lambda-url.us-east-1.on.aws/",cardTransaction,String.class);
-
-        return string != null;
+        System.out.println("Sending request: " + cardTransaction);
+        return restTemplate.postForObject("https://qcs7khyahouzpbpgf4fvqyl2cq0wlejz.lambda-url.us-east-1.on.aws/",cardTransaction,Boolean.class);
     }
 
 }
