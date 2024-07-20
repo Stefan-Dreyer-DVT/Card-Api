@@ -13,7 +13,8 @@ public class LambdaCaller {
 
     public boolean sendRequest(CardTransaction cardTransaction){
         System.out.println("Sending request: " + cardTransaction);
-        return restTemplate.postForObject("https://qcs7khyahouzpbpgf4fvqyl2cq0wlejz.lambda-url.us-east-1.on.aws/",cardTransaction,Boolean.class);
+        var response =  restTemplate.postForObject("https://qcs7khyahouzpbpgf4fvqyl2cq0wlejz.lambda-url.us-east-1.on.aws/",cardTransaction,Boolean.class);
+        return response;
     }
 
 }
